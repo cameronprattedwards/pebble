@@ -1,0 +1,17 @@
+<h2>My Pebbles</h2>
+<table data-bind="foreach: viewModels">
+	<tr class="pebbleTemplate">
+		<td data-bind="edit: message">
+			<span data-bind="text: message() || 'Double-Click to Add Message', event: { dblclick: edit }"></span>
+			<input type="text" data-bind="value: message, event: { blur: stopEdit, change: save }" placeholder="Enter message" />
+		</td>
+		<td data-bind="edit: type">
+			<span data-bind="text: type, event: { dblclick: edit }"></span>
+			<select data-bind="value: type, event: { blur: stopEdit, change: save }">
+				<option>checkbox</option>
+				<option>text</option>
+			</select>
+		</td>
+	</tr>
+</table>
+<span data-bind="click: addNew" class="pointer text-primary">+ Add a Pebble</span>

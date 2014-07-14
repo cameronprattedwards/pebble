@@ -1,0 +1,22 @@
+<h1>The Day View</h1>
+<ul data-bind="foreach: pebbles" class="pebbles">
+	<li>
+		<!-- ko if: type() == 'checkbox' -->
+			<input type="checkbox" data-bind="checked: value" />
+		<!-- /ko -->
+		<!-- ko if: type() == 'text' -->
+			<input type="text" data-bind="value: value" />
+		<!-- /ko -->
+		<span data-bind="text: message"></span>
+		<span data-bind="visible: templateType" class="pull-right">
+			<span data-bind="click: takeTemplateType" class="text-primary pointer">
+				Change the type to "<span data-bind="text: templateType"></span>."
+			</span> 
+			<span class="text-danger">
+				You'll lose the current value.
+			</span>
+		</span>
+	</li>
+</ul>
+
+<p data-bind="text: currentDate().toTimeString()"></p>

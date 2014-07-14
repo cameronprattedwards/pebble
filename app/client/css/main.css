@@ -1,0 +1,34 @@
+.pebbleTemplate td {
+	padding-right: 20px;
+}
+
+.pebbleTemplate td input,
+.pebbleTemplate td select {
+	display: none;
+}
+
+.pebbleTemplate td.editing input,
+.pebbleTemplate td.editing select {
+	display: initial;
+}
+
+.pebbleTemplate td.editing span {
+	display: none;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.ui-datepicker-calendar tr td span,
+.ui-datepicker-calendar tr td a {
+	height: 50px;
+}
+
+.ui-datepicker-inline {
+	width: 100%;
+}
+
+.pebbles {
+	list-style-type: none;
+}

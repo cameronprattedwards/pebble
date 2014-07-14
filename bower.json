@@ -1,0 +1,25 @@
+{
+  "name": "pebble",
+  "version": "0.0.0",
+  "authors": [
+    "Cameron Edwards <cameronprattedwards@gmail.com>"
+  ],
+  "description": "For keeping track of your life",
+  "keywords": [
+    "life"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "durandal": "~2.1.0",
+    "ko-data": "https://github.com/cameronprattedwards/ko-data.git"
+  }
+}

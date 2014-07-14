@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav">
+	<li>
+		<a data-bind="click: (function () { window.router = router; return logout }())" class="pointer">Sign Out</a>
+	</li>
+	<li data-bind="css: { active: router.hashTable()['#month/:month'].isActive }">
+		<a data-bind="attr: { href: '#month/' + monthString }">Month</a>
+	</li>	
+	<li data-bind="css: { active: router.hashTable()['#day/:day'].isActive }">
+		<a data-bind="attr: { href: '#day/' + dayString }">Day</a>
+	</li>
+	<li data-bind="css: { active: router.hashTable()['#pebbles'].isActive }">
+		<a href="#pebbles">My Pebbles</a>
+	</li>
+</ul>

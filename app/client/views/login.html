@@ -1,0 +1,41 @@
+<div data-bind="with: viewModel" class="row">
+	<div class="col-md-6">
+		<h1>Register</h1>
+		<form data-bind="event: { submit: save }">
+			<p>
+				<input type="text" placeholder="email" data-bind="value: email, valueUpdate: 'afterkeydown', event: { blur: validateEmail }" />
+				<!-- ko if: email.errors().length && emailMode() -->
+					<span data-bind="text: email.errors()[0]" class="text-danger"></span>
+				<!-- /ko -->
+			</p>
+			<p>
+				<input type="password" placeholder="password" data-bind="value: password, valueUpdate: 'afterkeydown', event: { blur: validatePassword }" />
+				<!-- ko if: password.errors().length && passMode() -->
+					<span data-bind="text: password.errors()[0]" class="text-danger"></span>
+				<!-- /ko -->
+			</p>
+			<p>
+				<input type="password" placeholder="confirm password" data-bind="value: confirmPassword, valueUpdate: 'afterkeydown', event: { blur: validateConfirm }" />
+				<span data-bind="visible: confirmPassword.valid()" class="glyphicon glyphicon-ok text-success"></span>
+				<!-- ko if: confirmPassword.errors().length && confirmMode()-->
+					<span data-bind="text: confirmPassword.errors()[0]" class="text-danger"></span>
+				<!-- /ko -->
+			</p>
+			<ul data-bind="foreach: errors" class="text-danger">
+				<li data-bind="text: $data"></li>
+			</ul>
+			<p><button type="submit">submit</button></p>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<h1>Login</h1>
+		<form data-bind="with: loginVm, event: { submit: login }">
+			<p><input type="text" placeholder="email" data-bind="value: email" /></p>
+			<p><input type="password" placeholder="password" data-bind="value: password" /></p>
+			<ul data-bind="foreach: $parent.loginErrors" class="text-danger">
+				<li data-bind="text: $data"></li>
+			</ul>
+			<p><button>submit</button></p>
+		</form>
+	</div>
+</div>
